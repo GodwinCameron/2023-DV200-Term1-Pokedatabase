@@ -1,0 +1,14 @@
+$accentMain: rgb(27,31,54);
+$accentRed: rgb(255,63,63);
+$shadow: 1px 8px 12px -4px rgba(0,0,0,0.75);
+$shadowRed: rgb(255,0,0);
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+Iso);
+
+
+body{
+    background-color: $accentMain;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
