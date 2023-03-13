@@ -6,9 +6,26 @@ $shadowRed: rgb(255,0,0);
 
 
 @import url(https://fonts.googleapis.com/css?family=Rubik+Iso);
+@import url(https://fonts.googleapis.com/css?family=Jockey+One);
+@import url(https://fonts.googleapis.com/css?family=Golos+Text);
+
+
 
 
 body{
+    margin: 0;
+    padding: 0;
     background-color: $accentMain;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.background{
+    width: 100% -10px;
+    background-image: url(./assets/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    padding: 10px;
+}
+

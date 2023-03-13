@@ -1,0 +1,88 @@
+@import "../../Styles.scss";
+
+.main {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $accentRed;
+  color: $accentMain;
+  width: 99%;
+  height: 1.2vh;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
+  font-family: "Courier New", Courier, monospace;
+  
+
+  h3 {
+    font-family: "Rubik Iso";
+    font-size: 25px;
+    color: white;
+    text-decoration: underline;
+  }
+
+  h2 {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.selector {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 7vw;
+}
+
+h3:hover {
+  color: black;
+  cursor: pointer;
+}
+
+h2:hover {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+  transform: scale(1.3);
+}
+
+.subSection {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .search {
+    display: flex;
+    background-color: $accentRed;
+    gap: 1vw;
+    border-radius: 4px;
+    box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
+    height: 3vh;
+    width: 25vw;
+    align-items: center;
+    justify-content: center;
+    
+
+    .searchInput {
+      border: 0;
+      width: 80%;
+      color: red;
+
+      &:focus{
+        border: 0;
+      }
+    }
+
+    .searchBtn{
+      width: 10%;
+
+      &:hover{
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}
