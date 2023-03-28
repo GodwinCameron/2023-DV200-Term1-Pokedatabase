@@ -1,0 +1,12 @@
+@import "../../Styles.scss";
+
+.main {
+  display: flex;
+  width: 20vw;
+  height: 80vh;
+  border: 2px solid rgb(54, 59, 87);
+  border-radius: 7px;
+  margin-bottom: -7vh;
+  justify-content: center;
+  text-align: center;
+}
