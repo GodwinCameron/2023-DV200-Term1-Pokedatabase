@@ -38,10 +38,19 @@ const CardComponent = (props) => {
       ".png";
   }
 
+  const clickHandler = () => {
+    props.setShowModal(true)
+    props.setModalId([props.id, zeroPad(props.id, 4)]);
+  }
+
+
+
+
+
 
   return (
     <>
-      <div onClick={() => props.setShowModal(true)} className={styles.main}>
+      <div id={props.id} onClick={clickHandler} className={styles.main}>
         {/* <div className={styles.icon}><img src={pic} className={styles.picon}/></div> =============================== THIS FORMS PART OF THE DYNAMIC ICONS BUT INCREASES THE TOTAL AXIOS CALLS*/}
         <div className={styles.icon}>
           <img src={iconLink} className={styles.picon} />

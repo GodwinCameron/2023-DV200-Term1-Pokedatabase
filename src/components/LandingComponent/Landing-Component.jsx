@@ -5,10 +5,35 @@ import styles from "./Style-Landing.module.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "react-overlays";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+} from 'chart.js';
+import { Bar, Doughnut } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  ArcElement,
+  Tooltip,
+);
 
 const LandingComponent = () => {
   const [pokeCards, setPokeCards] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [modalId, setModalId] = useState([1,1]);
+  const [modalName, setModalName] = useState();
+
+
+  var modalImgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+modalId[0]+".png"
+
 
   useEffect(() => {
     axios
@@ -37,16 +62,20 @@ const LandingComponent = () => {
 
         let startItem = pokeData.map((item) => (
           <CardComponent
+            key={item.id}
             id={item.id}
             pname={item.name}
             plink={item.url}
             setShowModal={setShowModal}
+            setModalId={setModalId}
           />
         ));
         setPokeCards(startItem);
-
-        // console.log(pokeData);
       });
+
+    
+
+
   }, []);
 
   var handleClose = () => setShowModal(false);
@@ -55,6 +84,76 @@ const LandingComponent = () => {
   };
 
   const renderBackdrop = (props) => <div className="backdrop" {...props} />;
+
+
+  useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/'+modalId[0]+'/')
+    .then((res) => {
+      let data = res.data;
+      setModalName(data.name);
+      setModalStats([data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat, data.stats[3].base_stat, data.stats[4].base_stat, data.stats[5].base_stat]);
+      setModalNutt([data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat]);
+      setModalSprite(data.sprites.front_default);
+    })
+  }, [modalId])
+  
+  const [modalStats, setModalStats] = useState([]);
+  const [modalNutt, setModalNutt] = useState([]);
+  const [modalSprite, setModalSprite] = useState('');
+
+
+  const options = {
+    indexAxis: 'y',
+    maintainAspectRatio: 'false',
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
+    },
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Horizontal Bar Chart',
+      },
+    },
+  };
+  const labels = ['Health Points', 'Attack Points','Defence','Special Attack', 'Special Defense','Speed'];
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Value',
+        data: modalStats,
+        border: 'none',
+        backgroundColor: ['#66E850', '#E85050', '#2E54DC', '#778FE5','#F439D6','#F59F61'],
+      }
+    ],
+  };
+
+  const data2 = {
+    labels: ['Health', 'Attack', 'Defense'],
+    datasets: [
+      {
+        label: 'Value',
+        data: modalNutt,
+        backgroundColor: [
+          '#7CFF4E',
+          '#FF4E4E',
+          '#22CFF5',
+          
+        ],
+        borderColor: [
+          '#7CFF4E',
+          '#FF4E4E',
+          '#22CFF5',
+          
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
 
   return (
     <>
@@ -71,8 +170,6 @@ const LandingComponent = () => {
           laborum.
         </p>
         <NavBarComponent />{" "}
-        {/* Change font of first heading on bar, also change size of search field to be bigger*/}
-        {/* <ModalComponent /> */}
         <div className="modal-holder">
           <Modal
             className="modal"
@@ -81,12 +178,18 @@ const LandingComponent = () => {
             renderBackdrop={renderBackdrop}
           >
             <div className="main-modal">
-              <img className='modal-img' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/500.png' />
-              <h1>Emboar</h1>
-              <h1>#0500</h1>
+              <div className={styles.modalImage}><img className="modal-img"src={modalImgSrc}/></div>
+              <div className={styles.modalDivider}/>
+              <h1>{modalName}</h1>
+              <p>#{modalId[1]}</p>
+              <div className={styles.stats}><p>Stats:</p></div>
+              <div className={styles.bar}><Bar options={options} data={data} /></div>
+              <div className={styles.nutt}><Doughnut data={data2} /></div>
+              <div className={styles.sprite}><img className={styles.spriteImg}src={modalSprite} /></div>
             </div>
           </Modal>
         </div>
+        <p>Every Pokemon from all regions and series:</p>
         <div className={styles.cards}>{pokeCards}</div>
       </div>
     </>
@@ -94,4 +197,36 @@ const LandingComponent = () => {
 };
 
 export default LandingComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

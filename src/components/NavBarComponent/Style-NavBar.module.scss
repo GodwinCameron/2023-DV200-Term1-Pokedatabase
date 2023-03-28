@@ -10,13 +10,13 @@
   width: 99%;
   height: 1.2vh;
   padding: 10px;
+  padding-bottom: 15px;
   border-radius: 7px;
-  box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
-  font-family: "Courier New", Courier, monospace;
+  box-shadow: $shadowRed;
+  font-family: 'Barlow';
   
 
   h3 {
-    font-family: "Rubik Iso";
     font-size: 25px;
     color: white;
     text-decoration: underline;
@@ -49,7 +49,7 @@ h2:hover {
 
 .subSection {
   width: 100%;
-  height: 5vh;
+  height: 8vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,7 +60,7 @@ h2:hover {
     gap: 1vw;
     border-radius: 4px;
     box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
-    height: 3vh;
+    height: 6vh;
     width: 25vw;
     align-items: center;
     justify-content: center;
@@ -69,6 +69,7 @@ h2:hover {
     .searchInput {
       border: 0;
       width: 80%;
+      height: 50%;
       color: red;
 
       &:focus{

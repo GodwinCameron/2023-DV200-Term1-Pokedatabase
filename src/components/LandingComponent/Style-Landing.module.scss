@@ -30,9 +30,50 @@
 }
 
 .cards{
-    margin-top: 10vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.3vw;
+}
+
+
+.modalImage{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+}
+
+.modalDivider{
+    background-color: $accentRed;
+    box-shadow: $shadowRed;
+    width: 80%;
+    height: 10px;
+    border-radius: 7px;
+    margin: 1vh;
+}
+
+.bar{
+    width: 20vw;
+}
+.nutt{
+    width: 13vw;
+}
+
+.stats{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sprite{
+    margin-top: -16vh;
+}
+.spriteImg{
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center
 }
