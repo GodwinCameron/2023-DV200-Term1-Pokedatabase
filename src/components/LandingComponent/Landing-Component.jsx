@@ -174,6 +174,18 @@ const LandingComponent = () => {
           <Modal
             className="modal"
             show={showModal}
+            // info about api in stats page like number of types of pokemon
+
+            // add timeline info on timeline page (look closely at the brief for this)
+            // add compare page
+            // repeat functionality of modal on stats page
+            // complete card by having dynamic type icon
+            // move chart elements to separate components for cleaner landing page (Tsebo's advice)
+            // tweak styling (maybe add some padding to the whole app?)
+
+            // add compare functionality through means of a button on card for SPAA (if possible)
+
+
             onHide={handleClose}
             renderBackdrop={renderBackdrop}
           >
