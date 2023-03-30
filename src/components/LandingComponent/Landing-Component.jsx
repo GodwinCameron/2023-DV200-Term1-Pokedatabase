@@ -5,25 +5,9 @@ import styles from "./Style-Landing.module.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal } from "react-overlays";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  ArcElement,
-  Title,
-  Tooltip,
-} from 'chart.js';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import ModalStatBar from "../ModalStatBar/ModalStatBar-Component";
+import ModalStatNut from "../ModalStatNut/ModalStatNut-Component";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  ArcElement,
-  Tooltip,
-);
 
 const LandingComponent = () => {
   const [pokeCards, setPokeCards] = useState([]);
@@ -32,7 +16,12 @@ const LandingComponent = () => {
   const [modalName, setModalName] = useState();
 
 
-  var modalImgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+modalId[0]+".png"
+  if (modalId[0] < 906) {
+    var modalImgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"+modalId[0]+".png"
+  } else {
+    var modalImgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+modalId[0]+".png"
+  }
+  
 
 
   useEffect(() => {
@@ -92,82 +81,31 @@ const LandingComponent = () => {
       let data = res.data;
       setModalName(data.name);
       setModalStats([data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat, data.stats[3].base_stat, data.stats[4].base_stat, data.stats[5].base_stat]);
-      setModalNutt([data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat]);
+      setModalNut([data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat]);
       setModalSprite(data.sprites.front_default);
     })
   }, [modalId])
   
   const [modalStats, setModalStats] = useState([]);
-  const [modalNutt, setModalNutt] = useState([]);
+  const [modalNut, setModalNut] = useState([]);
   const [modalSprite, setModalSprite] = useState('');
 
 
-  const options = {
-    indexAxis: 'y',
-    maintainAspectRatio: 'false',
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Chart.js Horizontal Bar Chart',
-      },
-    },
-  };
-  const labels = ['Health Points', 'Attack Points','Defence','Special Attack', 'Special Defense','Speed'];
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Value',
-        data: modalStats,
-        border: 'none',
-        backgroundColor: ['#66E850', '#E85050', '#2E54DC', '#778FE5','#F439D6','#F59F61'],
-      }
-    ],
-  };
-
-  const data2 = {
-    labels: ['Health', 'Attack', 'Defense'],
-    datasets: [
-      {
-        label: 'Value',
-        data: modalNutt,
-        backgroundColor: [
-          '#7CFF4E',
-          '#FF4E4E',
-          '#22CFF5',
-          
-        ],
-        borderColor: [
-          '#7CFF4E',
-          '#FF4E4E',
-          '#22CFF5',
-          
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-
+  
 
   return (
     <>
       <div className={styles.content}>
         <h1>The PokéDataBase!</h1>
         <p>
-          Some caption with something said here Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+          The one-stop site for all you Pokémon data needs! From Pokémon types, to stats, to evolutions and even to
+          how they would fair when being compared to other Pokémon or even; who would win in a fight between two 
+          Pokémon! This site displays many of the datasets from PokéAPI in componmental based React charts, using Charts.js!
+          <br/>
+          <br/>
+          To get started, click on one of the Pokémon cards displayed below to get some basic stats about them, you can 
+          quickly find the Pokémon you're looking for by typing their name or number in the search field below the navbar.
+          Or, see more in depth, comprehensive information on Pokémon by clicking on of the tabs!
         </p>
         <NavBarComponent />{" "}
         <div className="modal-holder">
@@ -184,6 +122,7 @@ const LandingComponent = () => {
             // tweak styling (maybe add some padding to the whole app?)
 
             // add compare functionality through means of a button on card for SPAA (if possible)
+            // try as much as possible to fully complete the project so that the rest of the time can be for the presentation, readme and other things
 
 
             onHide={handleClose}
@@ -195,8 +134,11 @@ const LandingComponent = () => {
               <h1>{modalName}</h1>
               <p>#{modalId[1]}</p>
               <div className={styles.stats}><p>Stats:</p></div>
-              <div className={styles.bar}><Bar options={options} data={data} /></div>
-              <div className={styles.nutt}><Doughnut data={data2} /></div>
+              {/* <div className={styles.bar}><Bar options={options} data={data} /></div> */}
+              <ModalStatBar modalStats={modalStats}/>
+              <div className={styles.stats}><p>Fighting Orientation:</p></div>
+              {/* <div className={styles.nutt}><Doughnut data={data2} /></div> */}
+              <ModalStatNut modalNut={modalNut}/>
               <div className={styles.sprite}><img className={styles.spriteImg}src={modalSprite} /></div>
             </div>
           </Modal>

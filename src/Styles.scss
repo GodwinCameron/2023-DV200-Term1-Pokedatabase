@@ -27,6 +27,8 @@ body {
   background-repeat: no-repeat;
   height: 60vh;
   padding: 10px;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 
@@ -52,6 +54,7 @@ body {
   color: white;
   line-height: 1px;
   text-transform: capitalize;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
 }
 p{font-family: 'Golos Text'}
 .backdrop {

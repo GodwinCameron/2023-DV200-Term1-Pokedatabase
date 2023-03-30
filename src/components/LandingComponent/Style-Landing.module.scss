@@ -1,79 +1,75 @@
 @import "../../Styles.scss";
 
-.content{
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.content {
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    h1{
-        font-size: 150px;
-        font-family: 'Jockey One';
-        text-shadow: 2px 5px 4px white;
+  h1 {
+    font-size: 150px;
+    font-family: "Jockey One";
+    text-decoration: underline overline;
+    text-underline-offset: 50px;
+    text-shadow: 2px 5px 4px white;
 
-        &:hover{
-            cursor: default;
-        }
+    &:hover {
+      cursor: default;
     }
+  }
 
-    p{
-        font-family: 'Golos Text';
-        letter-spacing: 1px;
-        text-align: center;
-        text-shadow: 1px 2px 3px white;
+  p {
+    font-family: "Golos Text";
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 1px 2px 3px white;
 
-        &:hover{
-            cursor: default;
-        }
+    &:hover {
+      cursor: default;
     }
+  }
 }
 
-.cards{
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.3vw;
+.cards {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.3vw;
+}
+
+.modalImage {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+
+.modalDivider {
+  background-color: $accentRed;
+  box-shadow: $shadowRed;
+  width: 80%;
+  height: 10px;
+  border-radius: 7px;
+  margin: 1vh;
 }
 
 
-.modalImage{
-    min-height: 20vh;
-    display: flex;
-    justify-content: center;
+
+.stats {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.modalDivider{
-    background-color: $accentRed;
-    box-shadow: $shadowRed;
-    width: 80%;
-    height: 10px;
-    border-radius: 7px;
-    margin: 1vh;
+.sprite {
+  margin-top: -14vh;
 }
-
-.bar{
-    width: 20vw;
-}
-.nutt{
-    width: 13vw;
-}
-
-.stats{
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.sprite{
-    margin-top: -16vh;
-}
-.spriteImg{
-    height: 80px;
-    width: 80px;
-    display: flex;
-    justify-content: center
+.spriteImg {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
 }
