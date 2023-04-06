@@ -1,0 +1,47 @@
+@import "../../Styles.scss";
+.main {
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Barlow";
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1px;
+}
+
+.content {
+  margin-top: 7vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80vh;
+
+  .stats {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+    height: auto;
+
+    .statsContent {
+        text-align: left;
+      background-color: $accentMain;
+      border: solid 1px rgb(216, 216, 216);
+      border-radius: 4px;
+      width: 65%;
+      height: 40vh;
+      padding-left: 1vw;
+      padding-right: 1vw;
+    }
+  }
+}

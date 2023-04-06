@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 const CardComponent = (props) => {
   const zeroPad = (num, places) => String(num).padStart(places, "0");
 
+  const [typeIcon, setTypeIcon] = useState();
+  const [typeIcon2, setTypeIcon2] = useState();
 
   
 
@@ -38,13 +40,20 @@ const CardComponent = (props) => {
       ".png";
   }
 
+  
   const clickHandler = () => {
     props.setShowModal(true)
     props.setModalId([props.id, zeroPad(props.id, 4)]);
+    localStorage.setItem("selectedId",props.id)
   }
 
-
-
+  let allTypes = [styles.type];
+  axios.get("https://pokeapi.co/api/v2/pokemon/"+props.id+"/")
+  .then((res) => {
+    setTypeIcon(res.data.types[0].type.name)
+    setTypeIcon2(res.data.types[1].type.name)
+  })
+  .catch((err) => err)
 
 
 
@@ -62,7 +71,8 @@ const CardComponent = (props) => {
             <p>#{zeroPad(props.id, 4)}</p>
           </div>
           <div className={styles.right}>
-            <div className={styles.type}></div>
+            <div className={[typeIcon2, styles.type].join(' ')}></div>
+            <div className={[typeIcon, styles.type].join(' ')}></div>
           </div>
         </div>
       </div>

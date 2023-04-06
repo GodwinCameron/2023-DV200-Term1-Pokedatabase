@@ -1,0 +1,48 @@
+@import "../../../Styles.scss";
+
+.subSection {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    .search {
+      display: flex;
+      background-color: $accentRed;
+      gap: 1vw;
+      border-radius: 4px;
+      box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
+      height: 6vh;
+      width: 25vw;
+      min-width: 400px;
+      align-items: center;
+      justify-content: center;
+      font-family: "Barlow";
+  
+      .searchInput {
+        border: 0;
+        border-radius: 3px;
+        width: 70%;
+        height: 50%;
+        color: red;
+        padding-left: 12px;
+        text-transform: capitalize;
+  
+        &:focus {
+          border: 0;
+          outline: none;
+        }
+      }
+  
+      .searchBtn {
+        width: 10%;
+        color: white;
+  
+        &:hover {
+          color: black;
+          cursor: pointer;
+        }
+      }
+    }
+  }

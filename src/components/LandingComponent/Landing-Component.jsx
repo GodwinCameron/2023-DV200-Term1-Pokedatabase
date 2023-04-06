@@ -26,7 +26,7 @@ const LandingComponent = () => {
 
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=2000")
+      .get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1273")
       .then((response) => {
         let pokemons = response.data.results;
 
@@ -118,8 +118,6 @@ const LandingComponent = () => {
             // add compare page
             // repeat functionality of modal on stats page
             // complete card by having dynamic type icon
-            // move chart elements to separate components for cleaner landing page (Tsebo's advice)
-            // tweak styling (maybe add some padding to the whole app?)
 
             // add compare functionality through means of a button on card for SPAA (if possible)
             // try as much as possible to fully complete the project so that the rest of the time can be for the presentation, readme and other things

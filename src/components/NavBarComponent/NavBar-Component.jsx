@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./Style-NavBar.module.scss";
 
 const NavBarComponent = () => {
+ 
+  
+
+
   return (
     <>
       <div className={styles.main}>
@@ -12,9 +16,6 @@ const NavBarComponent = () => {
           <Link to='/compare'><h2>Compare</h2></Link>
           <Link to='/timeline'><h2>Timeline</h2></Link>
         </div>
-      </div>
-      <div className={styles.subSection}>
-        <div className={styles.search}><input className={styles.searchInput} type={'text'} placeholder='Pokémon name or number'></input><div className={styles.searchBtn}>Search</div></div>
       </div>
     </>
   );

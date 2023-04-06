@@ -1,7 +1,7 @@
 @import "../../Styles.scss";
 
 .main {
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,8 +13,7 @@
   padding-bottom: 15px;
   border-radius: 7px;
   box-shadow: $shadowRed;
-  font-family: 'Barlow';
-  
+  font-family: "Barlow";
 
   h3 {
     font-size: 25px;
@@ -47,44 +46,10 @@ h2:hover {
   transform: scale(1.3);
 }
 
-.subSection {
-  width: 100%;
-  height: 8vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  .search {
-    display: flex;
-    background-color: $accentRed;
-    gap: 1vw;
-    border-radius: 4px;
-    box-shadow: 1px 2px 15px 3px rgba(255, 10, 10, 10.75);
-    height: 6vh;
-    width: 25vw;
-    min-width: 400px;
-    align-items: center;
-    justify-content: center;
-    
 
-    .searchInput {
-      border: 0;
-      width: 80%;
-      height: 50%;
-      color: red;
 
-      &:focus{
-        border: 0;
-      }
-    }
 
-    .searchBtn{
-      width: 10%;
 
-      &:hover{
-        color: black;
-        cursor: pointer;
-      }
-    }
-  }
-}
+
+
