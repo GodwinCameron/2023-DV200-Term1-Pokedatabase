@@ -6,6 +6,12 @@ const StatsComponent = () => {
   return (
     <div className={styles.main}>
       <NavBarComponent />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <div className={styles.heading}>
         <h1>PokéAPI has some really cool features!</h1>
         <p>See some of them below.</p>

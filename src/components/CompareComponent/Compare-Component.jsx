@@ -14,68 +14,44 @@ const CompareComponent = () => {
     const [pokeCards2, setPokeCards2] = useState([]);
     const [compareId1, setCompareId1] = useState();
     const [compareId2, setCompareId2] = useState();
-
-
-    
-  useEffect(() => {
-
-
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1273")
-      .then((response) => {
-        let pokemons = response.data.results;
-
-        const pokeData = [];
-
-        for (let i = 0; i < pokemons.length; i++) {
-          if (i > 1009) {
-            let newId = i - 1009;
-            pokeData.push({
-              name: pokemons[i].name,
-              url: pokemons[i].url,
-              id: 10000 + newId,
-            });
-          } else {
-            pokeData.push({
-              name: pokemons[i].name,
-              url: pokemons[i].url,
-              id: i + 1,
-            });
-          }
-        }
-
-        let startItem1 = pokeData.map((item) => (
-          <SimpleCardComponent
-            key={item.id}
-            id={item.id}
-            pname={item.name}
-            plink={item.url}
-            setCompareId={setCompareId1}
-          />
-        ));
-        let startItem2 = pokeData.map((item) => (
-            <SimpleCardComponent
-              key={item.id}
-              id={item.id}
-              pname={item.name}
-              plink={item.url}
-              setCompareId={setCompareId2}
-            />
-          ));
-        setPokeCards1(startItem1);
-        setPokeCards2(startItem2);
-      });
-    }, []);
-
     const [compareName1, setCompareName1] = useState();
     const [compareName2, setCompareName2] = useState();
     const [generalStats1, setGeneralStats1] = useState();
     const [generalStats2, setGeneralStats2] = useState();
     const [compareStats1, setCompareStats1] = useState();
     const [compareStats2, setCompareStats2] = useState();
+    // these consts could all be compiled into one big object holding arrays, though it is still
+    // signifigantly less than setting up consts for each set of data from the api
 
 
+    
+  useEffect(() => {
 
+
+    // The main call for all the pokemon and mapping them to options in the html select element
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1273")
+      .then((response) => {let pokemons = response.data.results;
+        const pokeData = [];
+
+        for (let i = 0; i < pokemons.length; i++) {
+          if (i > 1009) {
+            let newId = i - 1009;
+            pokeData.push({name: pokemons[i].name,url: pokemons[i].url,id: 10000 + newId,});
+          } else {pokeData.push({name: pokemons[i].name,url: pokemons[i].url,id: i + 1,});}
+        }
+
+        let startItem1 = pokeData.map((item) => (<SimpleCardComponent key={item.id}id={item.id}pname={item.name}plink={item.url}setCompareId={setCompareId1}/>));
+        let startItem2 = pokeData.map((item) => (<SimpleCardComponent key={item.id}id={item.id}pname={item.name}plink={item.url}setCompareId={setCompareId2}/>));
+        setPokeCards1(startItem1);
+        setPokeCards2(startItem2);
+      });
+    }, []);
+
+    
+
+
+// separate useEffects for each compare sections so that only the one that is interacted with gets updated instead of updating almost all the components on the page
     useEffect(() => {
         let pushedStats = [];
         let pusheedGeneral = [];
@@ -91,6 +67,7 @@ const CompareComponent = () => {
       })
       .catch((err) => err)
     }, [compareId1])
+
     useEffect(() => {
         let pushedStats = [];
         let pushedGeneral = [];
@@ -109,17 +86,12 @@ const CompareComponent = () => {
       }, [compareId2])
     
 
-      const test = 'hi';
-
+      // boiler plate code from chartsjs
       const options = {
         responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: compareName1+' vs. '+compareName2,
+        plugins: {legend: {position: 'top',},
+          title: {display: true,
+            text: compareName1+' vs. '+compareName2, //this is all I changed for the options
           },
         },
       };
@@ -128,17 +100,18 @@ const CompareComponent = () => {
       const labelsRadar = ['Health', 'Attack', 'Defense', 'SP Attack', 'SP Defense', 'Speed'];
 
 
+      // boilerplate again
       const barData = {
-        labels,
+        labels, //dynamic labels set above
         datasets: [
           {
-            label: compareName1,
-            data: generalStats1,
+            label: compareName1, //changed values here
+            data: generalStats1, //here
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
           },
           {
-            label: compareName2,
-            data: generalStats2,
+            label: compareName2, //here
+            data: generalStats2, //and here, similar in radarData
             backgroundColor: 'rgba(255, 49, 82, 0.5)',
           },
         ],
@@ -164,6 +137,21 @@ const CompareComponent = () => {
           },
         ],
       };
+
+
+
+
+      // NOTE ================================================================================================
+      // The charts could be created in their own components and loaded in 
+      // like I did in the Landing page, it leads to clearer code but this just
+      // shows that you can use either method and it will work out the same
+      // =====================================================================================================
+
+
+
+
+
+
 
     return(<div className={styles.main}>
         <NavBarComponent />

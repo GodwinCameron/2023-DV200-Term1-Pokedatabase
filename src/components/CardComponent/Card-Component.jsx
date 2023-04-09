@@ -27,6 +27,9 @@ const CardComponent = (props) => {
   // ===================================================================================================================
 
 
+
+
+  // Unique logic for a handful of objects that do not have the same Icon structure in the API
   if (props.id == 10143) {
     var iconLink =
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10143.png";
@@ -41,12 +44,14 @@ const CardComponent = (props) => {
   }
 
   
+  // Click handler to display the modal, a lot of which I built from an online guide
   const clickHandler = () => {
     props.setShowModal(true)
     props.setModalId([props.id, zeroPad(props.id, 4)]);
     localStorage.setItem("selectedId",props.id)
   }
 
+  // Method used to render the types for the pokemon, making it dynamic and displaying types bassed on some pokemon having 1 or 2 types.
   let allTypes = [styles.type];
   axios.get("https://pokeapi.co/api/v2/pokemon/"+props.id+"/")
   .then((res) => {
@@ -71,6 +76,7 @@ const CardComponent = (props) => {
             <p>#{zeroPad(props.id, 4)}</p>
           </div>
           <div className={styles.right}>
+            {/* Types setup here with an "empty" return if the pokemon only has one type */}
             <div className={[typeIcon2, styles.type].join(' ')}></div>
             <div className={[typeIcon, styles.type].join(' ')}></div>
           </div>

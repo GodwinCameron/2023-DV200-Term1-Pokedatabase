@@ -33,32 +33,15 @@ const LandingComponent = () => {
         const pokeData = [];
 
         for (let i = 0; i < pokemons.length; i++) {
+          // if statement logic to correct the continuity discrepancy in the id param on the API side
           if (i > 1009) {
             let newId = i - 1009;
-            pokeData.push({
-              name: pokemons[i].name,
-              url: pokemons[i].url,
-              id: 10000 + newId,
-            });
-          } else {
-            pokeData.push({
-              name: pokemons[i].name,
-              url: pokemons[i].url,
-              id: i + 1,
-            });
-          }
+            pokeData.push({name: pokemons[i].name,url: pokemons[i].url,id: 10000 + newId,});
+          } else {pokeData.push({name: pokemons[i].name,url: pokemons[i].url,id: i + 1,});}
         }
 
         let startItem = pokeData.map((item) => (
-          <CardComponent
-            key={item.id}
-            id={item.id}
-            pname={item.name}
-            plink={item.url}
-            setShowModal={setShowModal}
-            setModalId={setModalId}
-          />
-        ));
+          <CardComponent key={item.id}id={item.id}pname={item.name}plink={item.url}setShowModal={setShowModal}setModalId={setModalId}/>));
         setPokeCards(startItem);
       });
 
@@ -68,12 +51,8 @@ const LandingComponent = () => {
   }, []);
 
   var handleClose = () => setShowModal(false);
-  var handleSuccess = () => {
-    console.log("success");
-  };
-
+  // boiler code for the modal according to the online guide
   const renderBackdrop = (props) => <div className="backdrop" {...props} />;
-
 
   useEffect(() => {
     axios.get('https://pokeapi.co/api/v2/pokemon/'+modalId[0]+'/')
@@ -109,33 +88,15 @@ const LandingComponent = () => {
         </p>
         <NavBarComponent />{" "}
         <div className="modal-holder">
-          <Modal
-            className="modal"
-            show={showModal}
-            // info about api in stats page like number of types of pokemon
-
-            // add timeline info on timeline page (look closely at the brief for this)
-            // add compare page
-            // repeat functionality of modal on stats page
-            // complete card by having dynamic type icon
-
-            // add compare functionality through means of a button on card for SPAA (if possible)
-            // try as much as possible to fully complete the project so that the rest of the time can be for the presentation, readme and other things
-
-
-            onHide={handleClose}
-            renderBackdrop={renderBackdrop}
-          >
+          <Modal className="modal"show={showModal}onHide={handleClose}renderBackdrop={renderBackdrop}>
             <div className="main-modal">
               <div className={styles.modalImage}><img className="modal-img"src={modalImgSrc}/></div>
               <div className={styles.modalDivider}/>
               <h1>{modalName}</h1>
               <p>#{modalId[1]}</p>
               <div className={styles.stats}><p>Stats:</p></div>
-              {/* <div className={styles.bar}><Bar options={options} data={data} /></div> */}
               <ModalStatBar modalStats={modalStats}/>
               <div className={styles.stats}><p>Fighting Orientation:</p></div>
-              {/* <div className={styles.nutt}><Doughnut data={data2} /></div> */}
               <ModalStatNut modalNut={modalNut}/>
               <div className={styles.sprite}><img className={styles.spriteImg}src={modalSprite} /></div>
             </div>
