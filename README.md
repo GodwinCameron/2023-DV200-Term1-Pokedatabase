@@ -41,5 +41,5 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 # Screenshots
 
-![Home/Landing page](/image/sample.png "This is a sample image.")
+![Home/Landing page](./Screenshots/home.JPG "Landing Page")
 
