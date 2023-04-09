@@ -41,9 +41,13 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 # Screenshots
 
+### Home/Landing page
 ![Home/Landing page](./Screenshots/home.JPG "Landing Page")
+### Comparing Pokémon and their stats
 ![Compare Pokémon](./Screenshots/compare.JPG "Compare")
+### Pokémon Info and Stats
 ![Stat Modal](./Screenshots/modal.JPG "Pokémon stat modal")
+### Pokémon Exp growth timeline
 ![Timeline page](./Screenshots/timeline.JPG "Timeline Page")
 
 
