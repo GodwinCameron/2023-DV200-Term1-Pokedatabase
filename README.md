@@ -42,4 +42,10 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 # Screenshots
 
 ![Home/Landing page](./Screenshots/home.JPG "Landing Page")
+![Compare Pokémon](./Screenshots/compare.JPG "Compare")
+![Stat Modal](./Screenshots/modal.JPG "Pokémon stat modal")
+![Timeline page](./Screenshots/timeline.JPG "Timeline Page")
+
+
+
 
