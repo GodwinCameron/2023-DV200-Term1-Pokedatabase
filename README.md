@@ -19,12 +19,13 @@ Hi! This is a second year development webapp - (website) project for Open Window
 
 ## Table of Contents:
 
-- [About the Project](#about-the-project)
-    - [Project Description](#project-description)
+- [About the Project](#-about-the-project)
+    - [Project Description](#-project-description)
     - [Built With](#built-with)
-- [Getting Started](#What-you'll-need-to-run-the-webapp)
+- [Getting Started](#-What-you'll-need-to-run-the-webapp)
     - [How to install](#Download)
-- [Features and Functionality](#Features)
+- [Features and Functionality](#-screenshots)
+- [Screenshots](#-Features)
 - [Concept Process](#concept-process)
     - [Ideation](#ideation)
     - [Wireframes](#wireframes)
@@ -32,10 +33,10 @@ Hi! This is a second year development webapp - (website) project for Open Window
     - [Implementation Process](#implementation-process)
         - [Highlights](#highlights)
         - [Challenges](#challenges)
-- [Video Demonstration](#video-demonstration)
-- [License](#license)
+- [Video Demonstration](#-video-demonstration)
+- [License](#-license)
 - [Contact](#-contact)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgements](#-acknowledgements)
 
 # 🎓 What you'll need to run the webapp:
 
