@@ -91,8 +91,6 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 [![Watch the video](https://static.vecteezy.com/system/resources/previews/027/245/458/non_2x/multimedia-video-player-frame-template-footage-display-live-video-streaming-broadcasting-illustration-vector.jpg)](https://youtu.be/BEZld5VxENs)
 
-</br>
-
 [Video not working? - Download here](./Demo/video.mp4)
 
 
