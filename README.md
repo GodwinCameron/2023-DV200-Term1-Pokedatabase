@@ -3,10 +3,10 @@
 
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/GodwinCameron/2023-DV200-Term1-Pokedatabase)
-![GitHub watchers](https://img.shields.io/github/watchers/GodwinCameron/2023-DV200-Term1-Pokedatabase)
+![GitHub repo size](https://img.shields.io/github/repo-size/GodwinCameron/2023-DV200-Term1-Pokedatabase?color=limegreen)
+![GitHub watchers](https://img.shields.io/github/watchers/GodwinCameron/2023-DV200-Term1-Pokedatabase?color=limegreen)
 ![GitHub language count](https://img.shields.io/github/languages/count/GodwinCameron/2023-DV200-Term1-Pokedatabase?color=limegreen)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/GodwinCameron/2023-DV200-Term1-Pokedatabase)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/GodwinCameron/2023-DV200-Term1-Pokedatabase?color=limegreen)
 
 ## 🔥 About the Project:
 #### Cameron Godwin (Author) Interactive Development 200 Term 1
