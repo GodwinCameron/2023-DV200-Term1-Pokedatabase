@@ -89,11 +89,11 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 #  🎥 Video Demonstration:
 
+[![Watch the video](https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png)](https://youtu.be/BEZld5VxENs)
 
-[View Demonstration](./Demo/video.mp4)
 </br>
 
-[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
+[Video not working? - Download here](./Demo/video.mp4)
 
 
 
