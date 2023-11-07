@@ -11,7 +11,7 @@
 ## 🔥 About the Project:
 #### Cameron Godwin (Author) Interactive Development 200 Term 1
 
-Hi! This is a second year development webapp project for Open Window created in React that explores the PokéAPI by displaying dynamic data using Charts2js
+Hi! This is a second year development webapp - (website) project for Open Window created in React that explores the PokéAPI by displaying dynamic data using Charts2js
 
 ### Built With:
 
