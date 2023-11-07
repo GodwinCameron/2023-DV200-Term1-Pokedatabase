@@ -64,7 +64,7 @@ wait till this finishes, the download should take between 5 to 20 mins depending
 
 Before you know it, the web Development server will launch in your default browser of choice! Showing off the _PokéDatabase_!
 
-# 🚀 Features:
+# Features 🚀 :
 
 PokéDatabase displays numerous sets of data from the official PokéAPI, information displayed includes:
 * Combat stats and values of each Pokémon
