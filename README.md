@@ -34,7 +34,7 @@ Hi! This is a second year development webapp - (website) project for Open Window
         - [Challenges](#challenges)
 - [Video Demonstration](#video-demonstration)
 - [License](#license)
-- [Contact](#contact)
+- [Contact](#-contact)
 - [Acknowledgements](#acknowledgements)
 
 # 🎓 What you'll need to run the webapp:
