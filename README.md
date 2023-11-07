@@ -17,6 +17,25 @@ Hi! This is a second year development webapp - (website) project for Open Window
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://html.org/)[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://html.org/)[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://www.php.net/docs.php) <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/946px-Javascript_badge.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+## Table of Contents:
+
+- [About the Project](#about-the-project)
+    - [Project Description](#project-description)
+    - [Built With](#built-with)
+- [Getting Started](# 🎓 What you'll need to run the webapp)
+    - [How to install](#how-to-install)
+- [Features and Functionality](#features-and-functionality)
+- [Concept Process](#concept-process)
+    - [Ideation](#ideation)
+    - [Wireframes](#wireframes)
+- [Development Process](#development-process)
+    - [Implementation Process](#implementation-process)
+        - [Highlights](#highlights)
+        - [Challenges](#challenges)
+- [Video Demonstration](#video-demonstration)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 # 🎓 What you'll need to run the webapp:
 
