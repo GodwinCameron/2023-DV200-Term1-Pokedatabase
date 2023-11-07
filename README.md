@@ -95,7 +95,7 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 <!-- AUTHORS -->
 
-## 📝 Author:
+## 🖊 Author:
 - **Cameron Godwin** - [Github](https://github.com/GodwinCameron)
 
 
