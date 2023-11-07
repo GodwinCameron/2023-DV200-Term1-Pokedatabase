@@ -24,7 +24,7 @@ Hi! This is a second year development webapp - (website) project for Open Window
     - [Built With](#built-with)
 - [Getting Started](#What-you'll-need-to-run-the-webapp)
     - [How to install](#Download)
-- [Features and Functionality](#features-and-functionality)
+- [Features and Functionality](#Features)
 - [Concept Process](#concept-process)
     - [Ideation](#ideation)
     - [Wireframes](#wireframes)
