@@ -23,7 +23,7 @@ Hi! This is a second year development webapp - (website) project for Open Window
     - [Project Description](#project-description)
     - [Built With](#built-with)
 - [Getting Started](#What-you'll-need-to-run-the-webapp)
-    - [How to install](###-Download)
+    - [How to install](###Download)
 - [Features and Functionality](#features-and-functionality)
 - [Concept Process](#concept-process)
     - [Ideation](#ideation)
