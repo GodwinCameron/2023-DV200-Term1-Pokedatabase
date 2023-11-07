@@ -24,7 +24,7 @@ Hi! This is a second year development webapp - (website) project for Open Window
     - [Built With](#built-with)
 - [Getting Started](#What-you'll-need-to-run-the-webapp)
     - [How to install](#Download)
-- [Features and Functionality](#🚀-Features)
+- [Features and Functionality](#Features)
 - [Concept Process](#concept-process)
     - [Ideation](#ideation)
     - [Wireframes](#wireframes)
@@ -95,25 +95,25 @@ This webapp does not display some of the data from the PokéAPI, it excludes but
 
 <!-- AUTHORS -->
 
-## Author:
+## 📝 Author:
 - **Cameron Godwin** - [Github](https://github.com/GodwinCameron)
 
 
 <!-- LICENSE -->
 
-## License:
+## 📜 License:
 
 Distributed under the MIT License. See `LICENSE` for more information.\
 
 <!-- LICENSE -->
 
-## Contact:
+## 💌 Contact:
 **Cameron Godwin** - [200109@virtualwindow.co.za](mailto:200109@virtualwindow.co.za) 
 - **Project Link** - https://github.com/GodwinCameron/2023-DV200-Term2-Hospicare
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## Acknowledgements:
+## 🏅 Acknowledgements:
 
 
 - [Figma](https://www.figma.com/)
